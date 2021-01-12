@@ -8,9 +8,7 @@ namespace ArcherGame
 		public virtual void OnTriggerEnter2D (Collider2D other)
 		{
 			if (other == Player.instance.collider)
-			{
 				Player.instance.Death ();
-			}
 			else
 			{
 				Arrow arrow = other.GetComponent<Arrow>();

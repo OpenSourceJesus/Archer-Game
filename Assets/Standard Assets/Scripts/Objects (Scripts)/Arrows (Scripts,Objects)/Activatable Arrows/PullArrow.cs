@@ -23,9 +23,12 @@ namespace ArcherGame
 
 		public virtual IEnumerator PullRoutine ()
 		{
+			Vector2 velocity = rigid.velocity;
+			// rigid.constraints = RigidbodyConstraints2D.FreezeAll;
 			rigid.gravityScale = 0;
-			Player.instance.canMoveAndJump = false;
-			do
+			Player.instance.velocityEffectors_Vector2Dict["Pull Arrow"].effect = (Vector2) (trs.position - Player.instance.trs.position).normalized * pullSpeed;
+			// Player.instance.canMoveAndJump = false;
+			while (true)
 			{
 				if (collider.isTrigger)
 				{
@@ -35,13 +38,16 @@ namespace ArcherGame
 				}
 				else
 				{
-					rigid.drag = 0;
-					rigid.angularDrag = float.MaxValue;
-					rigid.velocity = (Vector2) (Player.instance.trs.position - trs.position).normalized * pullSpeed;
+					// rigid.drag = 0;
+					// rigid.angularDrag = float.MaxValue;
+					float deltaTime = Time.deltaTime;
+					velocity += Physics2D.gravity * deltaTime;
+					velocity *= (1f - deltaTime * rigid.drag);
+					velocity = velocity.ProjectWithNoNegativeScaling((Player.instance.trs.position - trs.position).normalized * pullSpeed);
+					rigid.velocity = (Vector2) (Player.instance.trs.position - trs.position).normalized * pullSpeed + velocity;
 				}
-				Player.instance.velocityEffectors_Vector2Dict["Pull Arrow"].effect = (Vector2) (trs.position - Player.instance.trs.position).normalized * pullSpeed;
 				yield return new WaitForEndOfFrame();
-			} while (true);
+			}
 		}
 
 		public override void Deactivate ()
@@ -53,11 +59,13 @@ namespace ArcherGame
 		public override void OnDisable ()
 		{
 			base.OnDisable ();
+			// rigid.constraints = RigidbodyConstraints2D.None;
 			rigid.gravityScale = 1;
 			StopAllCoroutines();
 			// StopCoroutine(PullRoutine ());
-			Player.instance.canMoveAndJump = true;
+			// Player.instance.canMoveAndJump = true;
 			Player.instance.velocityEffectors_Vector2Dict["Pull Arrow"].effect = Vector2.zero;
+			print(1);
 			if (stuckInEnemy != null)
 				stuckInEnemy.velocityEffectors_Vector2Dict["Pull Arrow"].effect = Vector2.zero;
 		}

@@ -409,10 +409,32 @@ namespace Extensions
 			return distanceToClosestPointSqr;
 		}
 
+		public static bool IsOppositeDirecton (this Vector2 v1, Vector2 v2)
+		{
+			return v1.normalized == -v2.normalized;
+		}
+
+		public static bool IsOppositeDirecton (this Vector3 v1, Vector3 v2)
+		{
+			return v1.normalized == -v2.normalized;
+		}
+
 		public static Vector2 ProjectWithNoNegativeScaling (this Vector2 v, Vector2 onNormal)
 		{
 			Vector2 output = Vector3.Project(v, onNormal);
-			return output;
+			if (IsOppositeDirecton(output, onNormal))
+				return default(Vector2);
+			else
+				return output;
+		}
+
+		public static Vector3 ProjectWithNoNegativeScaling (this Vector3 v, Vector3 onNormal)
+		{
+			Vector3 output = Vector3.Project(v, onNormal);
+			if (IsOppositeDirecton(output, onNormal))
+				return default(Vector3);
+			else
+				return output;
 		}
     }
 }

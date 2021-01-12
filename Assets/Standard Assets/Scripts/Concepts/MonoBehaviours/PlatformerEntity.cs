@@ -259,7 +259,7 @@ namespace ArcherGame
 			}
 			if (animator != null)
 			{
-				if (!isHittingWall && move.sqrMagnitude > 0 && velocityEffectors_Vector2Dict["Pull Arrow"].effect.sqrMagnitude == 0)
+				if (!isHittingWall && move.sqrMagnitude > 0)
 				{
 					animator.ResetTrigger(idleAnimTriggerName);
 					animator.SetTrigger(moveAnimTriggerName);
@@ -279,24 +279,29 @@ namespace ArcherGame
 		{
 			SetIsGrounded ();
 			SetIsHittingWall ();
-			if (velocityEffectors_Vector2Dict["Pull Arrow"].effect.sqrMagnitude == 0)
-			{
+			// if (velocityEffectors_Vector2Dict["Pull Arrow"].effect.sqrMagnitude == 0)
+			// {
 				SetVelocityEffector (velocityEffectors_Vector2Dict["Falling"]);
 				SetVelocityEffector (velocityEffectors_Vector2Dict["Jump"]);
 				SetVelocityEffector (velocityEffectors_Vector2Dict["Wind Explosion"]);
 				SetVelocityEffector (velocityEffectors_Vector2Dict["Water"]);
-				rigid.velocity = velocityEffectors_Vector2Dict["Falling"].effect + velocityEffectors_Vector2Dict["Jump"].effect + velocityEffectors_Vector2Dict["Movement"].effect + velocityEffectors_Vector2Dict["Wind Explosion"].effect + velocityEffectors_Vector2Dict["Move Tile"].effect + velocityEffectors_Vector2Dict["Water"].effect;
-			}
-			else
-			{
-				velocityEffectors_Vector2Dict["Falling"].effect = Vector2.zero;
-				velocityEffectors_Vector2Dict["Jump"].effect = Vector2.zero;
-				velocityEffectors_Vector2Dict["Wind Explosion"].effect = Vector2.zero;
-				velocityEffectors_Vector2Dict["Water"].effect = Vector2.zero;
-				velocityEffectors_Vector2Dict["Movement"].effect = Vector2.zero;
-				velocityEffectors_Vector2Dict["Move Tile"].effect = Vector2.zero;
-				rigid.velocity = velocityEffectors_Vector2Dict["Pull Arrow"].effect;
-			}
+				SetVelocityEffector (velocityEffectors_Vector2Dict["Pull Arrow"]);
+				Vector2 velocity = Vector2.zero;
+				foreach (VelocityEffector_Vector2 velocityEffector in velocityEffectors_Vector2Dict.Values)
+					velocity += velocityEffector.effect;
+				rigid.velocity = velocity;
+				// rigid.velocity = velocityEffectors_Vector2Dict["Falling"].effect + velocityEffectors_Vector2Dict["Jump"].effect + velocityEffectors_Vector2Dict["Movement"].effect + velocityEffectors_Vector2Dict["Wind Explosion"].effect + velocityEffectors_Vector2Dict["Move Tile"].effect + velocityEffectors_Vector2Dict["Water"].effect;
+			// }
+			// else
+			// {
+			// 	velocityEffectors_Vector2Dict["Falling"].effect = Vector2.zero;
+			// 	velocityEffectors_Vector2Dict["Jump"].effect = Vector2.zero;
+			// 	velocityEffectors_Vector2Dict["Wind Explosion"].effect = Vector2.zero;
+			// 	velocityEffectors_Vector2Dict["Water"].effect = Vector2.zero;
+			// 	velocityEffectors_Vector2Dict["Movement"].effect = Vector2.zero;
+			// 	velocityEffectors_Vector2Dict["Move Tile"].effect = ;
+			// 	rigid.velocity = velocityEffectors_Vector2Dict["Pull Arrow"].effect;
+			// }
 			if (isSwimming)
 			{
 				if (waterRectIAmIn.yMax <= trs.position.y + rigid.velocity.y * Time.deltaTime)
@@ -352,6 +357,7 @@ namespace ArcherGame
 					velocityEffector.effect.y = 0;
 				// Debug.DrawLine(bottomLeftColliderCorner + offsetPhysicsQuery + (Vector2.left * groundLinecastOffset.lengthChange1), bottomRightColliderCorner + offsetPhysicsQuery + (Vector2.right * groundLinecastOffset.lengthChange2), Color.red, 0);
 			}
+			float gravityScale = velocityEffectors_floatDict["Gravity Scale"].effect;
 			switch (velocityEffector.name)
 			{
 				// case "Push":
@@ -455,10 +461,11 @@ namespace ArcherGame
 					// 		}
 					// 	}
 					// }
+					velocityEffector.effect.x = 0;
 					if (isSwimming || isGrounded || rigid.velocity.y > 0)
 						velocityEffector.effect.y = 0;
 					else if (rigid.velocity.y <= 0 && velocityEffectors_Vector2Dict["Jump"].effect.y == 0)
-						velocityEffector.effect += Physics2D.gravity * Time.deltaTime * velocityEffectors_floatDict["Gravity Scale"].effect;
+						velocityEffector.effect += Physics2D.gravity * Time.deltaTime * gravityScale;
 					break;
 				case "Jump":
 					if (isSwimming)
@@ -466,43 +473,52 @@ namespace ArcherGame
 						velocityEffector.effect.y = 0;
 						return;
 					}
-					if (velocityEffector.effect.y > -Physics2D.gravity.y * Time.deltaTime * velocityEffectors_floatDict["Gravity Scale"].effect)
-						velocityEffector.effect += Physics2D.gravity * Time.deltaTime * velocityEffectors_floatDict["Gravity Scale"].effect;
+					if (velocityEffector.effect.y > -Physics2D.gravity.y * Time.deltaTime * gravityScale)
+						velocityEffector.effect += Physics2D.gravity * Time.deltaTime * gravityScale;
 					else
 					{
 						if (!isGrounded && velocityEffectors_Vector2Dict["Falling"].effect.y == 0)
-							velocityEffectors_Vector2Dict["Falling"].effect.y = Physics2D.gravity.y * Time.deltaTime * velocityEffectors_floatDict["Gravity Scale"].effect + velocityEffector.effect.y;
+							velocityEffectors_Vector2Dict["Falling"].effect.y = Physics2D.gravity.y * Time.deltaTime * gravityScale + velocityEffector.effect.y;
 						velocityEffector.effect.y = 0;
 					}
+					break;
+				case "Pull Arrow":
+					if (velocityEffector.effect.sqrMagnitude == 0)
+						break;
+					foreach (KeyValuePair<string, VelocityEffector_Vector2> keyValuePair in velocityEffectors_Vector2Dict)
+						velocityEffectors_Vector2Dict[keyValuePair.Key].effect = keyValuePair.Value.effect.ProjectWithNoNegativeScaling(velocityEffector.effect);
 					break;
 				default:
 					if (!isSwimming)
 					{
-						if (velocityEffector.effect.y > -Physics2D.gravity.y * Time.deltaTime * velocityEffectors_floatDict["Gravity Scale"].effect)
-							velocityEffector.effect += Physics2D.gravity * Time.deltaTime * velocityEffectors_floatDict["Gravity Scale"].effect;
+						if (velocityEffector.effect.y > -Physics2D.gravity.y * Time.deltaTime * gravityScale)
+							velocityEffector.effect += Physics2D.gravity * Time.deltaTime * gravityScale;
 						else if (velocityEffector.effect.y > 0)
 							velocityEffector.effect.y = 0;
 					}
-					if (velocityEffector.effect.magnitude > velocityEffectors_floatDict["Slow Down Rate"].effect * Time.deltaTime)
+					float slowDownRate = velocityEffectors_floatDict["Slow Down Rate"].effect;
+					if (velocityEffector.effect.magnitude > slowDownRate * Time.deltaTime)
 					{
-						if (velocityEffector.effect.y != 0 && velocityEffectors_Vector2Dict["Movement"].effect.y != 0 && Mathf.Sign(velocityEffectors_Vector2Dict["Movement"].effect.y) != Mathf.Sign(velocityEffector.effect.y))
+						Vector2 movementVector = velocityEffectors_Vector2Dict["Movement"].effect;
+						float moveSpeed = velocityEffectors_floatDict["Move Speed"].effect;
+						if (velocityEffector.effect.y != 0 && movementVector.y != 0 && Mathf.Sign(movementVector.y) != Mathf.Sign(velocityEffector.effect.y))
 						{
-							if (Mathf.Abs(velocityEffector.effect.y) > Mathf.Abs(velocityEffectors_Vector2Dict["Movement"].effect.y * velocityEffectors_floatDict["Move Speed"].effect * (1f / (rigid.drag + 1)) * Time.deltaTime))
-								velocityEffector.effect.y += velocityEffectors_Vector2Dict["Movement"].effect.y * Time.deltaTime;
+							if (Mathf.Abs(velocityEffector.effect.y) > Mathf.Abs(movementVector.y * moveSpeed * (1f / (rigid.drag + 1)) * Time.deltaTime))
+								velocityEffector.effect.y += movementVector.y * Time.deltaTime;
 							else
 								velocityEffector.effect.y = 0;
 						}
-						if (velocityEffector.effect.x != 0 && velocityEffectors_Vector2Dict["Movement"].effect.x != 0 && Mathf.Sign(velocityEffectors_Vector2Dict["Movement"].effect.x) != Mathf.Sign(velocityEffector.effect.x))
+						if (velocityEffector.effect.x != 0 && movementVector.x != 0 && Mathf.Sign(movementVector.x) != Mathf.Sign(velocityEffector.effect.x))
 						{
-							if (Mathf.Abs(velocityEffector.effect.x) > Mathf.Abs(velocityEffectors_Vector2Dict["Movement"].effect.x * velocityEffectors_floatDict["Move Speed"].effect * (1f / (rigid.drag + 1)) * Time.deltaTime))
-								velocityEffector.effect.x += velocityEffectors_Vector2Dict["Movement"].effect.x * Time.deltaTime;
+							if (Mathf.Abs(velocityEffector.effect.x) > Mathf.Abs(movementVector.x * moveSpeed * (1f / (rigid.drag + 1)) * Time.deltaTime))
+								velocityEffector.effect.x += movementVector.x * Time.deltaTime;
 							else
 								velocityEffector.effect.x = 0;
 						}
 						if (isHittingWall)
 							velocityEffector.effect.x = 0;
-						if (velocityEffector.effect.magnitude > velocityEffectors_floatDict["Slow Down Rate"].effect * Time.deltaTime)
-							velocityEffector.effect = velocityEffector.effect.normalized * (velocityEffector.effect.magnitude - (velocityEffectors_floatDict["Slow Down Rate"].effect * Time.deltaTime));
+						if (velocityEffector.effect.magnitude > slowDownRate * Time.deltaTime)
+							velocityEffector.effect = velocityEffector.effect.normalized * (velocityEffector.effect.magnitude - (slowDownRate * Time.deltaTime));
 						else
 							velocityEffector.effect = Vector2.zero;
 					}
