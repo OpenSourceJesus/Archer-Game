@@ -1,0 +1,273 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7375915153114148486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5311784502783862044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60db9e1919d3da45a415e14e1a186a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  trs: {fileID: 5311784502783862240}
+  collider: {fileID: 3038301321762383577}
+  rigid: {fileID: 4152887332373368263}
+  jumpSpeed: 0
+  isGrounded: 0
+  isJumping: 0
+  whatICollideWith:
+    serializedVersion: 2
+    m_Bits: 4251783128
+  unrotatedColliderRectOnOrigin:
+    serializedVersion: 2
+    x: -0.5999999
+    y: -1.076
+    width: 1.1999998
+    height: 2.152
+  canSwim: 1
+  isSwimming: 0
+  canMoveAndJump: 1
+  velocityEffectors_float:
+  - name: Slow Down Rate
+    effect: 40
+  - name: Move Speed
+    effect: 6
+  - name: Gravity Scale
+    effect: 1
+  velocityEffectors_Vector2:
+  - name: Falling
+    effect: {x: 0, y: 0}
+  - name: Jump
+    effect: {x: 0, y: 0}
+  - name: Movement
+    effect: {x: 0, y: 0}
+  - name: Wind Explosion
+    effect: {x: 0, y: 0}
+  - name: Pull Arrow
+    effect: {x: 0, y: 0}
+  - name: Move Tile
+    effect: {x: 0, y: 0}
+  - name: Water
+    effect: {x: 0, y: 0}
+  worldObject: {fileID: 6016485372582377856}
+  groundLinecastOffset:
+    positionChangeAlongPerpendicular: 0
+    lengthChange1: 0
+    lengthChange2: 0
+  wallLinecastOffset:
+    positionChangeAlongPerpendicular: 0
+    lengthChange1: 0
+    lengthChange2: 0
+  roofLinecastOffset:
+    positionChangeAlongPerpendicular: 0
+    lengthChange1: 0
+    lengthChange2: 0
+  previousXPosition: 0
+  maxXVelocityToBeStuck: 0
+  raiseAmountToGetUnstuck: 0
+  idleAnimTriggerName: toEXIT
+  moveAnimTriggerName: toWALK
+  jumpAnimTriggerName: toJUMP
+  prefabIndex: 0
+  maxHp: 200
+  healthbarTrs: {fileID: 4263360330914474289}
+  shooter: {fileID: 0}
+  battleIAmPartOf: {fileID: 0}
+  flipToPlayerX_Trs: {fileID: 0}
+  bloodPrefab: {fileID: 0}
+  decayDelay: 1
+  spriteSkin: {fileID: 0}
+  activateOnDeath: {fileID: 0}
+  deadCollider: {fileID: 0}
+  isDead: 0
+  attackAnimTriggerName: toAttack
+  deathAnimTriggerName: toDYING
+  initPosition: {x: 0, y: -0.4999}
+  initRotation: 0
+  initFacingRight: 0
+  toPlayerX: 0
+  moveMultiplier: 1
+  enableWhileAlive: []
+  deathSoundPrefab: {fileID: 0}
+  deathAudioClips: []
+  whatBlocksVision:
+    serializedVersion: 2
+    m_Bits: 6292736
+  awake: 0
+  visionCollider: {fileID: 5286090815930785737}
+  followRangeCollider: {fileID: 7621398702247933022}
+  attackEntries:
+  - name: Slash
+    attack: {fileID: 11400000, guid: fa7bbc0aa69484704bd9f9380cd5606d, type: 2}
+    data:
+      awakableEnemy: {fileID: 7375915153114148486}
+      tempActiveObject:
+        obj: {fileID: 0}
+        duration: 1.6
+        realtime: 0
+  minChaseDistFromPlayer: 10
+  minChaseDistFromPlayerSqr: 0
+  maxEsacpeDistFromPlayer: 10
+  maxEsacpeDistFromPlayerSqr: 0
+  invulnerable: 1
+  spawnEntries:
+  - groundSpawnerEnemy: {fileID: 7375915153114148486}
+    enemyPrefab: {fileID: 5798096720899913686, guid: 9a4745cbee460fc42a08b7248cdf0618,
+      type: 3}
+    reloadDuration: 5
+    enemies: []
+    spawnRange: 4.033729
+--- !u!1001 &827518727861984328
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4321854853394755019, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321854853394755019, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321854853394755019, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321854853394755019, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813451052246972756, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_Name
+      value: Ground Spawner Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813451052246972840, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813451052246972840, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813451052246972840, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813451052246972840, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813451052246972840, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813451052246972840, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813451052246972840, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813451052246972840, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813451052246972840, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813451052246972840, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813451052246972840, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984263061408419013, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3211042217004674421, guid: 9c0f5f3edb82aae3cbcc573867828ace, type: 3}
+    - {fileID: 840522362103052034, guid: 9c0f5f3edb82aae3cbcc573867828ace, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 9c0f5f3edb82aae3cbcc573867828ace, type: 3}
+--- !u!1 &5311784502783862044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4813451052246972756, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+    type: 3}
+  m_PrefabInstance: {fileID: 827518727861984328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5311784502783862240 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4813451052246972840, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+    type: 3}
+  m_PrefabInstance: {fileID: 827518727861984328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &4152887332373368263 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3664218022142792079, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+    type: 3}
+  m_PrefabInstance: {fileID: 827518727861984328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6016485372582377856 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6342535538677474760, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+    type: 3}
+  m_PrefabInstance: {fileID: 827518727861984328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5311784502783862044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ed5ad3ae608418ab4fe61ee375611d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &3038301321762383577 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2400938749158324881, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+    type: 3}
+  m_PrefabInstance: {fileID: 827518727861984328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &4263360330914474289 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3481722625620997497, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+    type: 3}
+  m_PrefabInstance: {fileID: 827518727861984328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &5286090815930785737 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4764835279858041729, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+    type: 3}
+  m_PrefabInstance: {fileID: 827518727861984328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &7621398702247933022 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7115487692719007766, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+    type: 3}
+  m_PrefabInstance: {fileID: 827518727861984328}
+  m_PrefabAsset: {fileID: 0}

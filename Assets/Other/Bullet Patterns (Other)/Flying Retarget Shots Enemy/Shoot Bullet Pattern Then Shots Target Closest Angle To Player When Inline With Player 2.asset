@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eddbbeec921aadc7a2919ac5f9008af, type: 3}
+  m_Name: Shoot Bullet Pattern Then Shots Target Closest Angle To Player When Inline
+    With Player 2
+  m_EditorClassIdentifier: 
+  bulletPattern: {fileID: 11400000, guid: d487efb2bfdd86be7a3b804a9a403851, type: 2}
+  retargetAngles:
+  - 0
+  - 180
+  retargetDirections:
+  - {x: 1, y: 0}
+  - {x: -1, y: -0.00000008742278}
+  lineWidth: 0.5
+  lastRetarget: 1

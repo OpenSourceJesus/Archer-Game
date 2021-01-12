@@ -1,0 +1,265 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1470934715248261800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1470934715248261801}
+  - component: {fileID: 8243362573818437869}
+  m_Layer: 0
+  m_Name: Z Order Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1470934715248261801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470934715248261800}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8243362573818437869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470934715248261800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ead6dbb2202bc042ad101b57260fe7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addToZOrderedObjects: []
+  zOrderedObjects:
+  - objectName: Background Object
+    index: 0
+    renderer: {fileID: 1334009800779609661, guid: df9d2f0716a3ace40a48c58dd523a01c,
+      type: 3}
+    order: -32768
+    layerName: Back
+    layerIndex: -2022597433
+  - objectName: NPC
+    index: 1
+    renderer: {fileID: 3980336489534569693, guid: c66db9b8b0e8f76a0a87673d8a347c09,
+      type: 3}
+    order: -32768
+    layerName: Front
+    layerIndex: -1273237335
+  - objectName: Player
+    index: 2
+    renderer: {fileID: 7510358081475364757, guid: a06bb02d3f7172411be55d37ae9eda88,
+      type: 3}
+    order: -32767
+    layerName: Front
+    layerIndex: -1273237335
+  - objectName: Bomb 2
+    index: 3
+    renderer: {fileID: 860222486988750275, guid: 5173be5a7614541478358cb54f5609d0,
+      type: 3}
+    order: -32766
+    layerName: Front
+    layerIndex: -1273237335
+  - objectName: Bullet 2
+    index: 4
+    renderer: {fileID: 860222486988750275, guid: 4393d6ff02c4605b58e07732c6236973,
+      type: 3}
+    order: -32765
+    layerName: Front
+    layerIndex: -1273237335
+  - objectName: Ground Enemy
+    index: 5
+    renderer: {fileID: 7510358081475364757, guid: 9c0f5f3edb82aae3cbcc573867828ace,
+      type: 3}
+    order: -32768
+    layerName: Default
+    layerIndex: 0
+  - objectName: Arrow
+    index: 6
+    renderer: {fileID: 860222486988750275, guid: 30413131c6bf2fa579250a09ff0ce886,
+      type: 3}
+    order: -32767
+    layerName: Front
+    layerIndex: -1273237335
+  - objectName: Bomb
+    index: 7
+    renderer: {fileID: 860222486988750275, guid: ead890ae2d7781695b5df3caa5c97579,
+      type: 3}
+    order: -32766
+    layerName: Front
+    layerIndex: -1273237335
+  - objectName: Bullet 5
+    index: 8
+    renderer: {fileID: 860222486988750275, guid: d108c8a1fc7ca89308e36a4e4a00919c,
+      type: 3}
+    order: -32765
+    layerName: Front
+    layerIndex: -1273237335
+  - objectName: Bullet 3
+    index: 9
+    renderer: {fileID: 3407726906534086568, guid: c79dc3174b36c9e74b0726a2c5e3e9d8,
+      type: 3}
+    order: -32764
+    layerName: Front
+    layerIndex: -1273237335
+  - objectName: Bullet 4
+    index: 10
+    renderer: {fileID: 860222486988750275, guid: a6ef0fa71786607dca59446168ebeffe,
+      type: 3}
+    order: -32763
+    layerName: Front
+    layerIndex: -1273237335
+  - objectName: Bullet
+    index: 11
+    renderer: {fileID: 860222486988750275, guid: d021a751f346f52c086f19391681cd8f,
+      type: 3}
+    order: -32762
+    layerName: Front
+    layerIndex: -1273237335
+  - objectName: Bullet 6
+    index: 12
+    renderer: {fileID: 860222486988750275, guid: b3f96c7db65afa442a4665ae7a352716,
+      type: 3}
+    order: -32761
+    layerName: Front
+    layerIndex: -1273237335
+  - objectName: Move Tile
+    index: 13
+    renderer: {fileID: 1712146718143582691, guid: ece1590fe0f5dc353a6a061e61de3e31,
+      type: 3}
+    order: -32760
+    layerName: Default
+    layerIndex: 0
+  - objectName: Chest
+    index: 14
+    renderer: {fileID: 1407513662283240350, guid: 86d3be957d787b1459f89488372d3a73,
+      type: 3}
+    order: -32759
+    layerName: Default
+    layerIndex: 0
+  - objectName: Toggle Tile
+    index: 15
+    renderer: {fileID: 2489179008823706809, guid: c694007a99ebb506a98f22ab0b3c9d80,
+      type: 3}
+    order: -32758
+    layerName: Default
+    layerIndex: 0
+  - objectName: Obelisk
+    index: 16
+    renderer: {fileID: 432363407807393017, guid: f295497d7319773ebbfb499413d9ecc3,
+      type: 3}
+    order: -32757
+    layerName: Default
+    layerIndex: 0
+  - objectName: Breakable Tile
+    index: 17
+    renderer: {fileID: 8953969557323760232, guid: e02661881e55ecc528bf2ceec6801f2a,
+      type: 3}
+    order: -32756
+    layerName: Default
+    layerIndex: 0
+  - objectName: Dissolve Tile
+    index: 18
+    renderer: {fileID: 2489179008823706809, guid: 81c87ef0bbbff5f42a8788e15f4f1755,
+      type: 3}
+    order: -32755
+    layerName: Default
+    layerIndex: 0
+  - objectName: Flying Enemy
+    index: 19
+    renderer: {fileID: 5423480901130064726, guid: 8461681834a24117ab5adf6c8d75a701,
+      type: 3}
+    order: -32754
+    layerName: Default
+    layerIndex: 0
+  - objectName: Laser Magic Spire
+    index: 20
+    renderer: {fileID: 1688029439773492140, guid: bb81a94a9b2061d0ebf617495d927f8f,
+      type: 3}
+    order: -32753
+    layerName: Default
+    layerIndex: 0
+  - objectName: Shooter Trap
+    index: 21
+    renderer: {fileID: 1114116939131884023, guid: 90cee28afb6d9d17cb53f576c6d30db4,
+      type: 3}
+    order: -32752
+    layerName: Default
+    layerIndex: 0
+  - objectName: Hazard_Vines
+    index: 22
+    renderer: {fileID: 2631897529103163204, guid: d900076a50122e27e9f4d4f8814e5aa8,
+      type: 3}
+    order: -32751
+    layerName: Default
+    layerIndex: 0
+  - objectName: Wall 3
+    index: 23
+    renderer: {fileID: 8953969557323760232, guid: 36fccff068c2b2af88aa9a8b2d27f5ec,
+      type: 3}
+    order: -32750
+    layerName: Default
+    layerIndex: 0
+  - objectName: Spore Trap
+    index: 24
+    renderer: {fileID: 1114116939131884023, guid: b66fb96af9046e74588936c09317e6d5,
+      type: 3}
+    order: -32749
+    layerName: Default
+    layerIndex: 0
+  - objectName: Hazard_Saw
+    index: 25
+    renderer: {fileID: 4814294095553432065, guid: b18df87ff103961488cdd73dbbf2fd26,
+      type: 3}
+    order: -32748
+    layerName: Default
+    layerIndex: 0
+  - objectName: Spider Web
+    index: 26
+    renderer: {fileID: 565352638059159613, guid: 6199f229e4682ae509bcb9ad57010fc1,
+      type: 3}
+    order: -32747
+    layerName: Default
+    layerIndex: 0
+  renderers:
+  - {fileID: 3980336489534569693, guid: c66db9b8b0e8f76a0a87673d8a347c09, type: 3}
+  - {fileID: 432363407807393017, guid: f295497d7319773ebbfb499413d9ecc3, type: 3}
+  - {fileID: 1334009800779609661, guid: df9d2f0716a3ace40a48c58dd523a01c, type: 3}
+  - {fileID: 7510358081475364757, guid: a06bb02d3f7172411be55d37ae9eda88, type: 3}
+  - {fileID: 1712146718143582691, guid: ece1590fe0f5dc353a6a061e61de3e31, type: 3}
+  - {fileID: 7510358081475364757, guid: 9c0f5f3edb82aae3cbcc573867828ace, type: 3}
+  - {fileID: 860222486988750275, guid: a6ef0fa71786607dca59446168ebeffe, type: 3}
+  - {fileID: 2489179008823706809, guid: 81c87ef0bbbff5f42a8788e15f4f1755, type: 3}
+  - {fileID: 1114116939131884023, guid: 90cee28afb6d9d17cb53f576c6d30db4, type: 3}
+  - {fileID: 8953969557323760232, guid: e02661881e55ecc528bf2ceec6801f2a, type: 3}
+  - {fileID: 860222486988750275, guid: 30413131c6bf2fa579250a09ff0ce886, type: 3}
+  - {fileID: 1407513662283240350, guid: 86d3be957d787b1459f89488372d3a73, type: 3}
+  - {fileID: 860222486988750275, guid: b3f96c7db65afa442a4665ae7a352716, type: 3}
+  - {fileID: 2489179008823706809, guid: c694007a99ebb506a98f22ab0b3c9d80, type: 3}
+  - {fileID: 860222486988750275, guid: ead890ae2d7781695b5df3caa5c97579, type: 3}
+  - {fileID: 860222486988750275, guid: d021a751f346f52c086f19391681cd8f, type: 3}
+  - {fileID: 2631897529103163204, guid: d900076a50122e27e9f4d4f8814e5aa8, type: 3}
+  - {fileID: 860222486988750275, guid: d108c8a1fc7ca89308e36a4e4a00919c, type: 3}
+  - {fileID: 860222486988750275, guid: 4393d6ff02c4605b58e07732c6236973, type: 3}
+  - {fileID: 3407726906534086568, guid: c79dc3174b36c9e74b0726a2c5e3e9d8, type: 3}
+  - {fileID: 860222486988750275, guid: 5173be5a7614541478358cb54f5609d0, type: 3}
+  - {fileID: 1688029439773492140, guid: bb81a94a9b2061d0ebf617495d927f8f, type: 3}
+  - {fileID: 5423480901130064726, guid: 8461681834a24117ab5adf6c8d75a701, type: 3}
+  - {fileID: 7510358081475364757, guid: 9c0f5f3edb82aae3cbcc573867828ace, type: 3}
+  - {fileID: 1114116939131884023, guid: b66fb96af9046e74588936c09317e6d5, type: 3}
+  - {fileID: 8953969557323760232, guid: 36fccff068c2b2af88aa9a8b2d27f5ec, type: 3}
+  - {fileID: 4814294095553432065, guid: b18df87ff103961488cdd73dbbf2fd26, type: 3}
+  - {fileID: 565352638059159613, guid: 6199f229e4682ae509bcb9ad57010fc1, type: 3}

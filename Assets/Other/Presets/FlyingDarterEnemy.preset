@@ -1,0 +1,343 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FlyingDarterEnemy
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: d98ff2f7245d6c147a9cf89dbd87dd1a,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: animator
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: trs
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: collider
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rigid
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: jumpSpeed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: isGrounded
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: whatICollideWith.m_Bits
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: unrotatedColliderRectOnOrigin.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: unrotatedColliderRectOnOrigin.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: unrotatedColliderRectOnOrigin.width
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: unrotatedColliderRectOnOrigin.height
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: canSwim
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: isSwimming
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: canMoveAndJump
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_float.Array.size
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_float.Array.data[0].name
+    value: Slow Down Rate
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_float.Array.data[0].effect
+    value: 40
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_float.Array.data[1].name
+    value: Move Speed
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_float.Array.data[1].effect
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_float.Array.data[2].name
+    value: Gravity Scale
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_float.Array.data[2].effect
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_float.Array.data[3].name
+    value: Dart Speed
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_float.Array.data[3].effect
+    value: 11
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_Vector2.Array.size
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_Vector2.Array.data[0].name
+    value: Movement
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_Vector2.Array.data[0].effect.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_Vector2.Array.data[0].effect.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_Vector2.Array.data[1].name
+    value: Wind Explosion
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_Vector2.Array.data[1].effect.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_Vector2.Array.data[1].effect.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_Vector2.Array.data[2].name
+    value: Pull Arrow
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_Vector2.Array.data[2].effect.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_Vector2.Array.data[2].effect.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_Vector2.Array.data[3].name
+    value: Water
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_Vector2.Array.data[3].effect.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: velocityEffectors_Vector2.Array.data[3].effect.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: worldObject
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: prefabIndex
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: maxHp
+    value: 60
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: healthbarTrs
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: shooter
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: battleIAmPartOf
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: flipToPlayerX_Trs
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: bloodPrefab
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: whatBlocksVision.m_Bits
+    value: 6292736
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: awake
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: visionCollider
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: followRangeCollider
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: initPosition.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: initPosition.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: initRotation
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: initFacingRight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[0].name
+    value: Slash
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[0].attack
+    value: 
+    objectReference: {fileID: 11400000, guid: fa7bbc0aa69484704bd9f9380cd5606d, type: 2}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[0].data.awakableEnemy
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[0].data.aimerTrs
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[0].data.warningIndicator.obj
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[0].data.warningIndicator.duration
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[0].data.warningIndicator.realtime
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[0].data.tempActiveObject.obj
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[0].data.tempActiveObject.duration
+    value: 1.6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[0].data.tempActiveObject.realtime
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[1].name
+    value: Stab
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[1].attack
+    value: 
+    objectReference: {fileID: 11400000, guid: fa7bbc0aa69484704bd9f9380cd5606d, type: 2}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[1].data.awakableEnemy
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[1].data.aimerTrs
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[1].data.warningIndicator.obj
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[1].data.warningIndicator.duration
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[1].data.warningIndicator.realtime
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[1].data.tempActiveObject.obj
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[1].data.tempActiveObject.duration
+    value: Infinity
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: attackEntries.Array.data[1].data.tempActiveObject.realtime
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: minChaseDistFromPlayer
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: maxEsacpeDistFromPlayer
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rotateRate
+    value: 90
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: facingDirectionTrs
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: dartStopDelay
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: maxDartDist
+    value: 10
+    objectReference: {fileID: 0}

@@ -1,0 +1,11 @@
+lib/
+bin/
+obj/
+*.nupkg
+*.suo
+_ReSharper.*
+packages/
+*.user
+Nuget/lib
+.vs
+project.lock.json
